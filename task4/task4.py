@@ -1,5 +1,12 @@
+import argparse
+ 
+parser = argparse.ArgumentParser()
+parser.add_argument("n")
+ 
+args = parser.parse_args()
+
 a = []
-with open(input('файл с координатами\n'), 'r') as file:
+with open(args.n, 'r') as file:
     for i in file:
         if '\n' in i:
             i = i[:-1]

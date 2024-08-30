@@ -1,14 +1,21 @@
 from itertools import cycle
+import argparse
+ 
+parser = argparse.ArgumentParser()
+parser.add_argument("n")
+parser.add_argument("m")
+ 
+args = parser.parse_args()
 
-def task_1(numbers: str) -> str:
+
+def task_1(n, m) -> str:
     """
     Программа, которая выводит путь, по которому, двигаясь интервалом длины
     m по заданному массиву n, концом будет являться первый элемент.
     """
     try:
-        numbers = numbers.split(' ')
-        n = int(numbers[0])
-        m = int(numbers[1])
+        n = int(n)
+        m = int(m)
         if n <= 0 or m <= 0:
             return 'Числа должны быть положительными'
         if n < m:
@@ -35,5 +42,6 @@ def task_1(numbers: str) -> str:
         else:
             index += 1
 
-print(task_1(numbers=(input('введите числа через пробел: \n'))))
+if __name__ == "__main__":
+    print(task_1(args.n, args.m))
 
