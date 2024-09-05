@@ -1,6 +1,4 @@
 import json
-import os
-
 
 def to_make_values(link_to_file: str) -> dict:
     """

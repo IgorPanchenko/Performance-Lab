@@ -1,12 +1,12 @@
 import argparse
  
 parser = argparse.ArgumentParser()
-parser.add_argument("n")
+parser.add_argument("file")
  
 args = parser.parse_args()
 
 a = []
-with open(args.n, 'r') as file:
+with open(args.file, 'r') as file:
     for i in file:
         if '\n' in i:
             i = i[:-1]
